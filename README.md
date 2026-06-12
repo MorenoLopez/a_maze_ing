@@ -46,16 +46,6 @@ python3 a_maze_ing.py config.txt
 - `C`: cycle through color palettes
 - `Q` or `ESC`: quit the application
 
-## Resources
-
-- Maze generation algorithm: depth-first search / recursive backtracker
-- Breadth-first search (BFS) for shortest path solving
-- MLX / MiniLibX documentation for graphical output
-- Classic maze-related articles: "Maze generation algorithm" and "Depth-first search maze"
-
-### AI usage
-
-No artificial intelligence was used to write the project code. This README has been written manually to document the solution.
 
 ## Config file
 
@@ -161,3 +151,14 @@ These components can be reused in other maze, game, or graphical application pro
 - `mlx` / MiniLibX for graphical output
 - VS Code for development
 - Git for version control
+
+## Resources
+
+- Maze generation algorithm: depth-first search / recursive backtracker
+- Breadth-first search (BFS) for shortest path solving
+- MLX / MiniLibX documentation for graphical output
+- Classic maze-related articles: "Maze generation algorithm" and "Depth-first search maze"
+
+### AI usage
+
+This README has been improved by Github Copilot to document the solution.
