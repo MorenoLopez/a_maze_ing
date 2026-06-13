@@ -121,8 +121,8 @@ These components can be reused in other maze, game, or graphical application pro
 
 ### Team
 
-- `horarivo`: maze generation algorithm, testing, and documentation.
-- `mandrini`: path finding algorithm, design
+- `horarivo`: maze generation algorithm, desing, and documentation.
+- `mandrini`: path finding algorithm, testing
 
 ### Planning
 
