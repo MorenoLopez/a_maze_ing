@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by horarivo.*
+*This project has been created as part of the 42 curriculum by horarivo, mandrini.*
 
 # A-Maze-ing
 
@@ -121,7 +121,8 @@ These components can be reused in other maze, game, or graphical application pro
 
 ### Team
 
-- `horarivo`: full development, design, testing, and documentation.
+- `horarivo`: maze generation algorithm, testing, and documentation.
+- `mandrini`: path finding algorithm, design
 
 ### Planning
 
