@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by horarivo, mandrini.*
+*This project has been created as part of the 42 curriculum by horarivo*
 
 # A-Maze-ing
 
