@@ -1,33 +1,71 @@
-*This project has been created as part of the 42 curriculum by horarivo*
+*This project has been created as part of the 42 curriculum by horarivo.*
 
 # A-Maze-ing
 
+> A first version made entirely by myself
+
+| Maze generation preview | Path finding animation preview |
+| :---: | :---: |
+| ![Maze generation preview](./img/maze.png) | ![Path finding animation preview](./img/path.png) |
+
 ## Description
 
-A-Maze-ing is an interactive maze generator written in Python. The project aims to produce visual and playable mazes from a configuration file while providing an animated generation process, shortest path solving, and a text export of the result.
+A-Maze-ing 2.0 is an enhanced version of the original A-Maze-ing project, featuring smooth animations and improved visual feedback. This interactive maze generator written in Python aims to produce visual and playable mazes from a configuration file while providing an animated generation process, shortest path solving, and a text export of the result.
 
-The maze is rendered in an MLX window, and the application highlights a central "42" pattern to reinforce the visual identity of the project.
+### Key Features
+
+- **Animated Maze Generation**: Watch the maze generate in real-time with smooth animations
+- **Animated Path Display**: Visualize the shortest path with smooth animation effects
+- **Character Avatar**: An interactive avatar displayed in the maze window
+- **42 Pattern**: Central "42" pattern to reinforce the visual identity of the project
+- **Color Palette Support**: Cycle through different color schemes
+
+The maze is rendered in an MLX window with enhanced visual polish and interactive elements.
 
 ## Instructions
 
 ### Requirements
 
 - Python 3.10 or higher
-- `mlx` module compatible with Python 3 (provided as `mlx-2.2-py3-none-any.whl`)
+- `mlx` module compatible with Python 3 (provided as `mlx-2.2-py3-none-any.whl`, must be placed at the repository root)
 
 ### Installation
 
-1. Install Python 3.10+.
-2. Install development dependencies if needed:
+A `Makefile` is provided to automate setup. It creates a virtual environment (`.venv`), installs the lint/build dependencies, and installs the MLX wheel into it:
 
 ```bash
-python3 -m pip install -r requirements.txt
+make install
 ```
 
-3. Install the MLX module from the provided wheel:
+This runs, in order:
 
 ```bash
-python3 -m pip install mlx-2.2-py3-none-any.whl
+python3 -m venv .venv
+. .venv/bin/activate && pip install --upgrade pip
+. .venv/bin/activate && pip install -r requirements.txt
+. .venv/bin/activate && pip install mlx-*.whl
+```
+
+If you prefer to do it manually:
+
+1. Install Python 3.10+.
+2. Create and activate a virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+3. Install the lint/build dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Install the MLX module from the provided wheel:
+
+```bash
+pip install mlx-2.2-py3-none-any.whl
 ```
 
 ### Execution
@@ -36,8 +74,21 @@ python3 -m pip install mlx-2.2-py3-none-any.whl
 2. Run the application:
 
 ```bash
-python3 a_maze_ing.py config.txt
+make run
 ```
+
+or, equivalently:
+
+```bash
+. .venv/bin/activate && python3 a_maze_ing.py config.txt
+```
+
+### Other Makefile targets
+
+- `make debug`: runs the program under `pdb`.
+- `make lint`: runs `flake8` and `mypy` with the mandatory flags.
+- `make lint-strict`: runs `flake8` and `mypy --strict`.
+- `make clean`: removes caches (`__pycache__`, `.mypy_cache`, `.pytest_cache`) and the `.venv` directory.
 
 ### Keyboard controls
 
@@ -105,24 +156,28 @@ These components can be reused in other maze, game, or graphical application pro
 
 ## Project structure
 
-- `a_maze_ing.py`: main executable
-- `mazegen/app.py`: MLX interface, rendering, and event handling
-- `mazegen/config.py`: configuration parsing and validation
-- `mazegen/constants.py`: constants and color palettes
-- `mazegen/generator.py`: maze generation
-- `mazegen/renderer.py`: rendering and output writing
-- `mazegen/solver.py`: maze solving
-- `config.txt`: example configuration
-- `maze.txt`: generated output file
-- `pyproject.toml`: package configuration
-- `requirements.txt`: development dependencies
+```text
+a-maze-ing/
+├── a_maze_ing.py       - main executable
+├── config.txt          - example configuration
+├── Makefile            - install / run / debug / clean / lint targets
+├── pyproject.toml      - package configuration
+├── requirements.txt    - development dependencies
+└── mazegen/
+    ├── __init__.py     - public API of the package
+    ├── app.py          - MLX interface, rendering, and event handling
+    ├── config.py       - configuration parsing and validation
+    ├── constants.py    - constants and color palettes
+    ├── generator.py    - maze generation
+    ├── renderer.py     - rendering and output writing
+    └── solver.py       - maze solving
+```
 
 ## Project management
 
 ### Team
 
-- `horarivo`: maze generation algorithm, desing, and documentation.
-- `mandrini`: path finding algorithm, testing
+- `horarivo`: maze generation algorithm, design, and documentation, path finding algorithm, testing
 
 ### Planning
 
@@ -148,7 +203,7 @@ These components can be reused in other maze, game, or graphical application pro
 ### Tools used
 
 - Python 3.10+
-- `pip` for dependency management
+- `pip` and `venv` for dependency management and isolation
 - `mlx` / MiniLibX for graphical output
 - VS Code for development
 - Git for version control
@@ -162,4 +217,7 @@ These components can be reused in other maze, game, or graphical application pro
 
 ### AI usage
 
-This README has been improved by Github Copilot to document the solution.
+- **Animation Implementation**: AI assistance was used to implement smooth animations for maze generation and path display, improving the visual feedback and user experience.
+- **Code Quality**: Copilot helped refactor and optimize the code to support animation features efficiently.
+- **Documentation**: AI was used to enhance comments and docstrings throughout the codebase, making the code more maintainable and easier to understand for other developers.
+- **Code Review**: AI provided suggestions for improving code consistency and best practices.
