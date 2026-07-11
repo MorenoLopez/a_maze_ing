@@ -72,7 +72,7 @@ class AppState:
         if not self.mlx_ptr:
             die("Failed to initialize MLX.")
 
-        # ## Compute pixel dimensions ##################################
+        # ## Compute pixel dimensions
         _, screen_w, screen_h = mlx.mlx_get_screen_size(self.mlx_ptr)
 
         self.cs: int = max(
@@ -88,14 +88,14 @@ class AppState:
         self.win_h: int = self.maze_px_h + self.INFO_H
         self.wall_w: int = max(1, self.cs // 9)
 
-        # ## Create window ############################################
+        # ## Create window
         self.win_ptr: Any = mlx.mlx_new_window(
             self.mlx_ptr, self.win_w, self.win_h, "A-Maze-ing"
         )
         if not self.win_ptr:
             die("Unable to create MLX window.")
 
-        # ## Create full-window image buffer ##########################
+        # ## Create full-window image buffer
         self.img_ptr: Any = mlx.mlx_new_image(
             self.mlx_ptr, self.win_w, self.win_h
         )
@@ -107,7 +107,7 @@ class AppState:
             self.img_ptr
         )
 
-        # ## Application state ########################################
+        # ## Application state
         self.pal_idx: int = 0
         self.show_path: bool = False
         # MazeSolver is created once generation is complete, then cached
@@ -118,7 +118,7 @@ class AppState:
         # Steps per loop-hook call, scaled to maze size
         self.spf: int = max(4, (cfg.width * cfg.height) // 80)
 
-    # ## Generator management ##############################################
+    # ## Generator management
 
     def _make_gen(
         self, seed: Optional[int] = None
@@ -153,7 +153,7 @@ class AppState:
             self.solver = MazeSolver(self.gen)
         return self.solver
 
-    # ## Rendering ########################################################
+    # ## Rendering
 
     def _redraw(self) -> None:
         """Draw the entire scene into the buffer, then call put_image."""
@@ -261,7 +261,7 @@ class AppState:
             "SPACE=regen      P=path      C=color      Q=quit",
         )
 
-    # ## MLX Callbacks ####################################################
+    # ## MLX Callbacks
 
     def on_key(self, keycode: int, _param: object) -> None:
         """Keyboard event handler.
@@ -326,7 +326,7 @@ class AppState:
         """
         self.mlx.mlx_loop_exit(self.mlx_ptr)
 
-    # ## Main loop ########################################################
+    # ## Main loop
 
     def run(self) -> None:
         """Register MLX hooks and enter the main event loop."""
