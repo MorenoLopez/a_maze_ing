@@ -2,25 +2,22 @@
 
 # A-Maze-ing
 
-> A first version made entirely by myself
-
 | Maze generation preview | Path finding animation preview |
 | :---: | :---: |
 | ![Maze generation preview](./img/maze.png) | ![Path finding animation preview](./img/path.png) |
 
 ## Description
 
-A-Maze-ing 2.0 is an enhanced version of the original A-Maze-ing project, featuring smooth animations and improved visual feedback. This interactive maze generator written in Python aims to produce visual and playable mazes from a configuration file while providing an animated generation process, shortest path solving, and a text export of the result.
+A-Maze-ing is an interactive maze generator written in Python. From a plain-text configuration file, it produces a randomly generated maze - perfect or imperfect - displays it in a graphical MLX window, computes the shortest path from entry to exit, and exports the result to a text file using a hexadecimal wall representation.
 
 ### Key Features
 
-- **Animated Maze Generation**: Watch the maze generate in real-time with smooth animations
-- **Animated Path Display**: Visualize the shortest path with smooth animation effects
-- **Character Avatar**: An interactive avatar displayed in the maze window
+- **Maze Generation**: Randomly generated maze from a configuration file, with an optional reproducible seed
+- **Shortest Path Display**: Show/hide the shortest path from entry to exit
 - **42 Pattern**: Central "42" pattern to reinforce the visual identity of the project
 - **Color Palette Support**: Cycle through different color schemes
 
-The maze is rendered in an MLX window with enhanced visual polish and interactive elements.
+The maze is rendered in an MLX window with walls, entry, exit, and the solution path clearly displayed.
 
 ## Instructions
 
@@ -132,7 +129,7 @@ The project uses the "Recursive Backtracker" algorithm to generate the maze. Thi
 
 - It is simple to implement and easy to visualize.
 - It produces perfect mazes with a single path between cells.
-- It fits naturally with step-by-step animated generation.
+- It fits naturally with step-by-step generation.
 - It is suitable for adding visual features such as the "42" pattern and path solving.
 
 ## Reusable parts
@@ -177,7 +174,8 @@ a-maze-ing/
 
 ### Team
 
-- `horarivo`: maze generation algorithm, design, and documentation, path finding algorithm, testing
+- `horarivo`: maze generation algorithm, design, and documentation
+- `mandrini`: path finding algorithm, testing
 
 ### Planning
 
@@ -197,15 +195,14 @@ a-maze-ing/
 ### Improvements possible
 
 - Add multiple generation algorithms (Prim, Kruskal, Aldous-Broder).
-- Allow dynamic loading of multiple configurations.
-- Add more advanced rendering options (zoom, grid overlay, solver animation).
+- Add animated generation and path display.
+- Add more advanced rendering options (zoom, grid overlay).
 
 ### Tools used
 
 - Python 3.10+
 - `pip` and `venv` for dependency management and isolation
 - `mlx` / MiniLibX for graphical output
-- VS Code for development
 - Git for version control
 
 ## Resources
@@ -217,7 +214,6 @@ a-maze-ing/
 
 ### AI usage
 
-- **Animation Implementation**: AI assistance was used to implement smooth animations for maze generation and path display, improving the visual feedback and user experience.
-- **Code Quality**: Copilot helped refactor and optimize the code to support animation features efficiently.
-- **Documentation**: AI was used to enhance comments and docstrings throughout the codebase, making the code more maintainable and easier to understand for other developers.
-- **Code Review**: AI provided suggestions for improving code consistency and best practices.
+- **Code Review**: AI assistance was used to review the generator, solver, and rendering modules for bugs.
+- **Documentation**: AI was used to enhance comments and docstrings throughout the codebase.
+- **Packaging Guidance**: AI helped clarify how to correctly bundle a non-Python asset inside the `mazegen` wheel.
