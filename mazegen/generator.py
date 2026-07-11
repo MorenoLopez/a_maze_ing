@@ -86,7 +86,7 @@ class MazeGenerator:
         self._stamp_42()
         self._start_walk()
 
-    # ## '42' pattern ######################################################
+    # ## '42' pattern
 
     def _stamp_42(self) -> None:
         """Centre the '42' pattern and mark its cells as pre-visited.
@@ -115,7 +115,7 @@ class MazeGenerator:
                     self.visited[gy][gx] = True
                     self.is_42[gy][gx] = True
 
-    # ## Backtracker ######################################################─
+    # ## Backtracker
 
     def _start_walk(self) -> None:
         """Start the depth-first walk from the entry cell."""
