@@ -20,7 +20,7 @@ classifiers = [
 [tool.setuptools.packages.find]
 include = ["mazegen*"]
  
-# ## mypy ######################################################################
+# ## mypy
 [tool.mypy]
 python_version = "3.10"
 warn_return_any = true
@@ -29,7 +29,7 @@ ignore_missing_imports = true
 disallow_untyped_defs = true
 check_untyped_defs = true
  
-# ## pytest ####################################################################
+# ## pytest
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-v"
