@@ -17,7 +17,7 @@ from .config import die
 from .generator import MazeGenerator
 
 
-# ## Helpers couleur ######################################################─
+# ## Helpers
 
 
 def to_bytes(r: int, g: int, b: int) -> bytes:
@@ -50,7 +50,7 @@ def to_int(r: int, g: int, b: int) -> int:
     return 0xFF000000 | (r << 16) | (g << 8) | b
 
 
-# ## Drawing primitives ##################################################
+# ## Drawing primitives
 
 
 def fill_rect(
@@ -125,7 +125,7 @@ def draw_vline(
     fill_rect(data, sl, x, y, thick, length, cb)
 
 
-# ## Fichier de sortie ####################################################─
+# ## Output file
 
 
 def write_output(
